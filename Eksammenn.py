@@ -12,4 +12,4 @@ def hello():
     return render_template('hello.html', name=name)
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5808)
+    app.run(host='0.0.0.0', port=5808)
