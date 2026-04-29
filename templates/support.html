@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block title %}IT Support - NordTek Solutions AS{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="page-header">
+        <h1>IT Support Ticket System</h1>
+        <p>Submit a support ticket and our IT team will assist you shortly</p>
+    </div>
+
+    {% if success %}
+    <div class="alert alert-success">
+        <strong>✓ Success!</strong> Your support ticket has been submitted successfully. Our team will review it shortly.
+    </div>
+    {% endif %}
+
+    <div class="support-grid">
+        <div class="support-form-section">
+            <h2>Create Support Ticket</h2>
+            <form method="POST" class="support-form">
+                <div class="form-group">
+                    <label for="name">Your Name *</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="issue">Issue Description *</label>
+                    <textarea id="issue" name="issue" rows="6" required placeholder="Describe your issue in detail..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="priority">Priority Level *</label>
+                    <select id="priority" name="priority" required>
+                        <option value="">-- Select Priority --</option>
+                        <option value="Low">Low (General inquiry)</option>
+                        <option value="Medium">Medium (Some impact)</option>
+                        <option value="High">High (Significant impact)</option>
+                        <option value="Critical">Critical (System down)</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-large">Submit Ticket</button>
+            </form>
+        </div>
+
+        <div class="support-info-section">
+            <div class="info-card">
+                <h3>📋 Quick Guidelines</h3>
+                <ul>
+                    <li>Provide detailed descriptions of your issue</li>
+                    <li>Include error messages if applicable</li>
+                    <li>Specify affected systems or devices</li>
+                    <li>Select appropriate priority level</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h3>⏱️ Response Times</h3>
+                <ul>
+                    <li><strong>Critical:</strong> 15 minutes</li>
+                    <li><strong>High:</strong> 1-2 hours</li>
+                    <li><strong>Medium:</strong> 4-8 hours</li>
+                    <li><strong>Low:</strong> 24-48 hours</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h3>📞 Contact IT Support</h3>
+                <p><strong>Email:</strong> <a href="mailto:support@nordtek.no">support@nordtek.no</a></p>
+                <p><strong>Phone:</strong> +47 21 54 00 00</p>
+                <p><strong>Hours:</strong> 24/7 Support Available</p>
+            </div>
+        </div>
+    </div>
+
+    {% if tickets %}
+    <div class="tickets-section">
+        <h2>Recent Support Tickets</h2>
+        <div class="tickets-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Issue</th>
+                        <th>Priority</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for ticket in tickets|reverse %}
+                    <tr class="priority-{{ ticket.priority|lower }}">
+                        <td>#{{ ticket.id }}</td>
+                        <td>{{ ticket.name }}</td>
+                        <td>{{ ticket.issue[:50] }}{% if ticket.issue|length > 50 %}...{% endif %}</td>
+                        <td><span class="badge badge-{{ ticket.priority|lower }}">{{ ticket.priority }}</span></td>
+                        <td>{{ ticket.date }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
