@@ -20,7 +20,7 @@ Etter det var ferdig så skrev jeg inn ls for å se hva mapper ligger der. da ko
 Via terminalen så konfigurerte eg docker compose, det er bare en blueprint for selve nettsiden. 
 
 Her er innholdet i compose.yml som jeg brukte: 
-----
+
 name: eksamensapp
 services:
   eksamensapp:
@@ -31,7 +31,7 @@ services:
     volumes:
       - /var/log/ny-app:/var/log/ny-app
     restart: always
-----
+
 
 Her kan du se navnet som er da eksamensapp. 
 Den builder container som hetter eksamensapp, Port er satt til 5808. 
@@ -40,7 +40,7 @@ Og den restart er på always.
 Etter det var ferdig laget jeg en dockerfile via terminal inne i mappen, da skrev jeg inn nano Dockerfile, viktig med stor D.
 Her er innholdet i dockerfilen:
 
-----
+
 FROM python:3.13-slim
 WORKDIR /app
 COPY requirements.txt .
@@ -48,7 +48,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 EXPOSE 5808
 CMD ["python", "Eksammenn.py"]
-----
 
 Det denne dockerfilen gjør er at Den velger base image som er da python:3.13-slim.
 Den oppretter mappen som er da: WORKDIR /app
