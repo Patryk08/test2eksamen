@@ -63,3 +63,5 @@ Etter jeg var ferdig med det så oppdaterte jeg flask appen, jeg bytett på bakg
 Jeg Pushet changes på github, så i terminalen skrev jeg inn git pull og det puller de nyeste endringene på github. 
 Så skreiv jeg inn docker compose down får å slette den gamle containeren der den gamle nettsiden runnet. og bygget ny med å skrive sudo docker compose up -d --build. 
 Da er den nettsiden oppdatert. 
+
+
