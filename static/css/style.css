@@ -8,13 +8,13 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
-    background: #f5f5f5;
+    background: #ffffff;
 }
 
-/* Navigation */
+
 nav {
     background: linear-gradient(135deg, #1e3a5f, #2c5aa0);
-    color: white;
+    color: rgb(233, 199, 199);
     padding: 1rem 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
@@ -30,7 +30,7 @@ nav {
 
 nav h1 {
     font-size: 1.5rem;
-    color: white;
+    color: rgb(149, 221, 102);
 }
 
 nav ul {
@@ -50,7 +50,7 @@ nav a:hover {
     opacity: 0.8;
 }
 
-/* Main Content */
+
 .container {
     max-width: 1000px;
     margin: 0 auto;
@@ -89,7 +89,7 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Hero Section */
+
 .hero {
     background: linear-gradient(135deg, #1e3a5f, #2c5aa0);
     color: white;
@@ -118,7 +118,7 @@ a:hover {
 }
 
 .card {
-    background: white;
+    background: rgb(165, 170, 223);
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -126,7 +126,7 @@ a:hover {
 }
 
 .card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-8px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
@@ -134,14 +134,14 @@ a:hover {
     margin-top: 0;
 }
 
-/* Projects List */
+
 .projects-list {
     display: grid;
     gap: 1.5rem;
 }
 
 .project {
-    background: white;
+    background: rgb(224, 184, 138);
     padding: 1.5rem;
     border-radius: 8px;
     border-left: 4px solid #00a8e8;
@@ -157,7 +157,7 @@ a:hover {
     margin: 0.5rem 0;
 }
 
-/* Footer */
+
 footer {
     background: #1e3a5f;
     color: white;
@@ -167,7 +167,7 @@ footer {
 }
 
 footer p {
-    color: rgba(255,255,255,0.8);
+    color: rgba(0, 0, 0, 0.8);
     margin: 0.5rem 0;
 }
 
@@ -175,7 +175,7 @@ footer a {
     color: #00a8e8;
 }
 
-/* Responsive */
+
 @media (max-width: 600px) {
     .nav-container {
         flex-direction: column;
