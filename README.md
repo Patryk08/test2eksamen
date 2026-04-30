@@ -19,7 +19,7 @@ Da lastet jeg ned koden fra github. Da skrev jeg inn git pull og linken til gith
 Etter det var ferdig så skrev jeg inn ls for å se hva mapper ligger der. da kom det opp "test2eksamen" og det er der alle filene ligger. 
 Via terminalen så konfigurerte eg docker compose, det er bare en blueprint for selve nettsiden. 
 
-Her er innholdet i compose.yml som jeg brukte: 
+#Her er innholdet i compose.yml som jeg brukte: 
 
 name: eksamensapp
 services:
@@ -62,4 +62,4 @@ Nå på nettet skriver du inn Http://10.0.0.36 og da er du inpå nettsiden.
 Etter jeg var ferdig med det så oppdaterte jeg flask appen, jeg bytett på bakgrunn farge på nettsiden.
 Jeg Pushet changes på github, så i terminalen skrev jeg inn git pull og det puller de nyeste endringene på github. 
 Så skreiv jeg inn docker compose down får å slette den gamle containeren der den gamle nettsiden runnet. og bygget ny med å skrive sudo docker compose up -d --build. 
-## Da er den nettsiden oppdatert. 
+Da er den nettsiden oppdatert. 
